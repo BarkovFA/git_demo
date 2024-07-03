@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d8f2c23-1738-462d-9761-ef3b50cdd1ac" name="Changes" comment="new task">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="6d8f2c23-1738-462d-9761-ef3b50cdd1ac" name="Changes" comment="add new info" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719921900239</updated>
       <workItem from="1719921901561" duration="3735000" />
-      <workItem from="1719984880807" duration="10652000" />
+      <workItem from="1719984880807" duration="11825000" />
     </task>
     <task id="LOCAL-00001" summary="first test">
       <created>1719926822281</created>
@@ -111,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720031267086</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add new info">
+      <created>1720034228307</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720034228307</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +136,7 @@
     <MESSAGE value="first test" />
     <MESSAGE value="refactoring some problems" />
     <MESSAGE value="new task" />
-    <option name="LAST_COMMIT_MESSAGE" value="new task" />
+    <MESSAGE value="add new info" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new info" />
   </component>
 </project>
