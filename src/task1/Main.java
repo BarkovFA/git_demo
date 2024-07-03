@@ -1,4 +1,4 @@
-package com.company;
+package task1;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,12 +31,12 @@ class Point {
         y = change;
     }
 
-    double distance(Point point) {
+    public double distance(Point point) {
         int x1 = point.x - x;
         int y1 = point.y - y;
         return Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
     }
-
+    @Override
     public String toString() {
         return "(" + x + ", "+ y +")";
     }
