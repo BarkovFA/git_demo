@@ -38,12 +38,6 @@ class TimeSpan {
             minute = 0;
             second = 0;
         }
-        if (second < 0) {
-
-        }
-        if (minute < 0) {
-
-        }
     }
 
 
@@ -61,6 +55,7 @@ class TimeSpan {
 
     public int getHour() {
         return hour;
+
     }
 
     public int getMinute() {
@@ -88,3 +83,5 @@ class TimeSpan {
         return "("+ hour + ", "+ minute +", "+ second+")";
     }
 }
+
+
