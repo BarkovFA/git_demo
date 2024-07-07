@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Second complex number: " + c2);
         c1.add(c2);
         System.out.println("Summa complex number: " + c1);
-        c1.other(c2);
+        c1.mult(c2);
         System.out.println("Proizvedenie complex number: " + c1);
     }
 }
