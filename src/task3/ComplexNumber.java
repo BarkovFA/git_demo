@@ -17,19 +17,11 @@ public class ComplexNumber {
         return imaginary;
     }
 
-    public void setReal(double real) {
-        this.real = real;
-    }
-
-    public void setImaginary(double imaginary) {
-        this.imaginary = imaginary;
-    }
-
     public ComplexNumber add(ComplexNumber com) {
         return new ComplexNumber(this.real + com.real, this.imaginary + com.imaginary);
     }
 
-    public ComplexNumber other(ComplexNumber com) {
+    public ComplexNumber mult(ComplexNumber com) {
         double newReal = this.real * com.real - this.imaginary * com.imaginary;
         double newImag = this.real * com.real + this.imaginary * com.imaginary;
         return new ComplexNumber(newReal, newImag);
