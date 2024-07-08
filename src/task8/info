@@ -1,0 +1,2 @@
+Напишите метод static void throwCheckedException() который будет кидать checked исключение.
+
