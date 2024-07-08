@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Item item1 = new Item("Table", 500.5);
         Item item2 = new Item("Mouse", 500.5);
-        Bill bill1 = new Bill(item1, 3);
-        Bill bill2 = new Bill(item2, 2);
+        Bill bill1 = new Bill();
+        Bill bill2 = new Bill();
         System.out.println("Price without sale: " + bill1.getCost());
         DiscountBill discountBill = new DiscountBill(5);
         discountBill.addItem(item1, 12);
@@ -20,8 +20,8 @@ public class Main {
 
 
 class Item {
-    public String name;
-    public double price;
+    private String name;
+    private double price;
 
     public Item (String name, double price) {
         this.name = name;
@@ -40,7 +40,7 @@ class Item {
 class Bill {
     public Map <Item, Integer> items;
 
-    public Bill(Item item1, int i) {
+    public Bill() {
         this.items = new HashMap<>();
     }
     //add things in list
@@ -76,14 +76,14 @@ class DiscountBill extends Bill{
     @Override
     public double getCost() {
         double totalNotDisc = super.getCost();
-        double totalDic = totalNotDisc*(discount/100);
+        double totalDic = totalNotDisc * (discount / 100);
         double lastPrice = totalNotDisc - totalDic;
         return lastPrice;
     }
 
     public double getDisc() {
         double totalNotDisc = super.getCost();
-        double totalDic = totalNotDisc*(discount/100);
+        double totalDic = totalNotDisc * (discount / 100);
         return totalDic;
 
     }
