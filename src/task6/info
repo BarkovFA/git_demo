@@ -1,0 +1,2 @@
+Напишите в методе codeWithNPE код в результате работы которого случится NullPointerException
+//static void codeWithNPE()
