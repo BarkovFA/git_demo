@@ -1,81 +1,23 @@
 package task4;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import static task4.Logger.Level.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello");
+        Logger logger1 = Logger.getLogger("test");
+        Logger logger2 = Logger.getLogger("test");
+        System.out.println(logger1 == logger2);
+        logger1.debug("Info about debug");
+        logger1.warning("Info about warning");
+        logger1.info("Info about info");
+        logger1.error("Info about error");
+        logger1.warning("this is info about warning message: %d", 5);
+        logger1.error("this is info about error message: %d", 6);
     }
 }
 
-class Logger {
-
-    public enum Level  {
-        DEBUG, INFO, WARNING, ERROR;
-    }
-    private String name;
-    private Level currentName;
-
-    private Logger(String name) {
-        this.name = name;
-        this.currentName = Level.DEBUG;
-
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public static Logger getLogger (String name) {
-
-    }
-
-    private void logMessage(Level level, String message) {
-
-    }
-
-
-    //Debug 2 method
-    public void debug (String message) {
-    }
-    public void debug (String message, Object...args) {
-    }
-
-    //Info 2 method
-    public void info (String message) {
-    }
-    public void info (String message, Object...args) {
-    }
-
-    //warning 2 method
-    public void warning (String message) {
-    }
-
-    public void warning (String message, Object...args) {
-    }
-
-    //error 2 method
-    public void error (String message) {
-    }
-
-    public void error (String message, Object...args) {
-    }
-
-    //Two method log
-
-    public void log(String level, String message) {
-
-    }
-
-    public void log(String level, Object ... args) {
-    }
-
-    public void setLevel(Level level) {
-        this.currentName = level;
-    }
-
-    public String getLevel() {
-        return currentName;
-    }
-
-}
