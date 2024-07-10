@@ -1,4 +1,4 @@
-package test11;
+package task11;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -12,14 +12,11 @@ public class Main {
     }
 
     public static String readAsString(InputStream inputStream, Charset charset) throws IOException {
-        String value;
-        int num;
         Reader reader = new InputStreamReader(inputStream, charset);
         StringWriter stringBuffer = new StringWriter();
-        while ((num = reader.read()) != -1) {
-            stringBuffer.write(num);
+        while ((reader.read()) != -1) {
+            stringBuffer.write(reader.read());
         }
-        value = stringBuffer.toString();
-        return value;
+        return stringBuffer.toString();
     }
 }
