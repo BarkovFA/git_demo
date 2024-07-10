@@ -13,6 +13,7 @@ public class Main {
         } else System.out.println("произошла ошибка при чтении файла " +  "/home/user/file.txt");
     }
 
+
     public static String readFile(String pathToFile) throws IOException {
         FileReader fileReader = new FileReader(pathToFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
