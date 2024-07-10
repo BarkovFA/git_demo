@@ -17,7 +17,7 @@ public class Logger {
     private static final String TIME_FORMAT = "HH:mm:ss";
     private String name;
     private Level currentLevel;
-    private static final Map<String, Logger> loggers = new HashMap<>();
+    private static final HashMap<String, Logger> loggers = new HashMap<>();
 
     private Logger(String name) {
         this.name = name;
@@ -26,7 +26,12 @@ public class Logger {
     }
 
     public static Logger getLogger(String name) {
-        return loggers.get(name);
+        synchronized (loggers) {
+            if (!loggers.containsKey(name)) {
+                loggers.put(name, new Logger(name));
+            }
+            return loggers.get(name);
+        }
     }
 
     public String getName() {
