@@ -14,6 +14,8 @@ class Pair <X, Y> {
 
     public boolean equals(){
 
+
+
     }
 
 }
