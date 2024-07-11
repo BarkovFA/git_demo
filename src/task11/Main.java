@@ -14,11 +14,13 @@ public class Main {
 
 
     public static String readAsString(InputStream inputStream, Charset charset) throws IOException {
-        Reader reader = new InputStreamReader(inputStream, charset);
-        StringWriter stringBuffer = new StringWriter();
-        while ((reader.read()) != -1) {
-            stringBuffer.write(reader.read());
+        int num;
+        try (Reader reader = new InputStreamReader(inputStream, charset)) {
+            StringWriter stringWriter = new StringWriter();
+            while ((num = reader.read()) != -1) {
+                stringWriter.write(num);
+            }
+            return stringWriter.toString();
         }
-        return stringBuffer.toString();
     }
 }

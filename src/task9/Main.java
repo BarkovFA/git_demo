@@ -7,7 +7,7 @@ public class Main {
         double celsium = 10.2;
         double fareng = convertTemp.getConvert(celsium);
         double kelvin = convertTemp1.getConvert(celsium);
-        System.out.println(convertTemp);
+        System.out.println(convertTemp.getLastOperation());
 
     }
 
