@@ -38,7 +38,8 @@ class Item {
 }
 
 class Bill {
-    public Map <Item, Integer> items;
+    private Map <Item, Integer> items;
+    double sum = 0.0;
 
     public Bill() {
         this.items = new HashMap<>();
