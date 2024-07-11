@@ -34,7 +34,7 @@ class Main01 extends CheckSeasons{
             System.out.println(getSeason(2));
             System.out.println(getSeason(3));
             System.out.println(getSeason(0));
-        } catch (IllegalArgumentException e) {
+        } catch (MyException e) {
             System.err.println(e);
         }
     }

@@ -28,6 +28,7 @@ public class CheckSeasons {
     }
 }
 
+
 class Main extends CheckSeasons{
     public static void main(String[] args) {
         try {
