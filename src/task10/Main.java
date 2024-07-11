@@ -3,16 +3,22 @@ package task10;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.File;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        File file = new File("/home/user/file.txt");
-        if (file.exists() && file.isDirectory()) {
-            System.out.println("файл " +  "/home/user/file.txt" + " не найден");
-        } else System.out.println("произошла ошибка при чтении файла " +  "/home/user/file.txt");
-    }
+    public static void main(String[] args) {
+        String pathToFile = args[0]; // "/home/user/file.txt"
+        try {
+            String s = readFile(pathToFile);
+            System.out.println(s);
+        } catch (IOException e) {
+            if (e instanceof java.io.FileNotFoundException) {
+                System.out.println("файл " + pathToFile + " не найден");
+            } else {
+                System.out.println("произошла ошибка при чтении файла " + pathToFile);
+            }
+        }
 
+    }
 
     public static String readFile(String pathToFile) throws IOException {
         FileReader fileReader = new FileReader(pathToFile);
