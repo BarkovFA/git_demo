@@ -1,8 +1,17 @@
+package task15;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class Main {
     public static void main(String[] args) {
+        Pair<Integer, String> pair = Pair.of(1, "hello");
+        Integer i = pair.getFirst(1);
+        String s = pair.getSecond("hello");
 
+        Pair<Integer, String> pair2 = Pair.of(1, "hello");
+        boolean mustBeTrue = pair.equals(pair2);
+        boolean mustAlsoBeTrue = pair.hashCode() == pair2.hashCode();
     }
 }
 
@@ -29,15 +38,29 @@ class Pair <X, Y> {
         return secondValue;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pair)) return false;
 
-    public void equals() {
+        Pair<?, ?> pair = (Pair<?, ?>) o;
+        if (firstValue != null ? firstValue.equals(pair.firstValue) : pair.firstValue != null) return false;
+        return Objects.equals(secondValue, pair.secondValue);
 
-    }
-
+        }
     public int hashCod() {
-        return ;
+        int res = firstValue != null ? firstValue.hashCode() : 0;
+        res = 31 * res + (secondValue != null ? secondValue.hashCode() : 0);
+        return res;
 
 
     }
 
+    public void ifPresent() {
+        ifPresent(null);
+    }
+
+    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
+
+    }
 }
