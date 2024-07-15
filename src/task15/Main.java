@@ -3,6 +3,7 @@ package task15;
 import java.util.Objects;
 import java.util.function.Consumer;
 
+
 public class Main {
     public static void main(String[] args) {
         Pair<Integer, String> pair = Pair.of(1, "hello");
@@ -25,7 +26,7 @@ class Pair <X, Y> {
         secondValue = y;
     }
 
-    public static <X, Y> Pair <X, Y> of (X x, Y y) {
+    public static <X, Y> Pair<X, Y> of(X x, Y y) {
         return new Pair<>(x, y);
     }
 
@@ -42,25 +43,21 @@ class Pair <X, Y> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pair)) return false;
-
         Pair<?, ?> pair = (Pair<?, ?>) o;
-        if (firstValue != null ? firstValue.equals(pair.firstValue) : pair.firstValue != null) return false;
         return Objects.equals(secondValue, pair.secondValue);
-
-        }
-    public int hashCod() {
-        int res = firstValue != null ? firstValue.hashCode() : 0;
-        res = 31 * res + (secondValue != null ? secondValue.hashCode() : 0);
-        return res;
-
-
     }
 
+    public int hashCod() {
+        return Objects.hash(firstValue, secondValue);
+    }
+}
+
+
 //    public void ifPresent() {
-//        ifPresent(null);
+//       ifPresent(null);
 //    }
+//
 //
 //    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
-//
 //    }
-}
+//}
