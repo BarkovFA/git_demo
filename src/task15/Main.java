@@ -26,7 +26,7 @@ class Pair <X, Y> {
         secondValue = y;
     }
 
-    public static <X, Y> Pair <X, Y> of (X x, Y y) {
+    public static <X, Y> Pair<X, Y> of(X x, Y y) {
         return new Pair<>(x, y);
     }
 
@@ -45,18 +45,19 @@ class Pair <X, Y> {
         if (!(o instanceof Pair)) return false;
         Pair<?, ?> pair = (Pair<?, ?>) o;
         return Objects.equals(secondValue, pair.secondValue);
-        }
+    }
 
     public int hashCod() {
         return Objects.hash(firstValue, secondValue);
     }
-
-
-    public void ifPresent() {
-       ifPresent(null);
-    }
-
-
-    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
-    }
 }
+
+
+//    public void ifPresent() {
+//       ifPresent(null);
+//    }
+//
+//
+//    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
+//    }
+//}
