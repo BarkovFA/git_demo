@@ -42,18 +42,12 @@ class Pair <X, Y> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pair)) return false;
-
         Pair<?, ?> pair = (Pair<?, ?>) o;
-        if (firstValue != null ? firstValue.equals(pair.firstValue) : pair.firstValue != null) return false;
         return Objects.equals(secondValue, pair.secondValue);
-
         }
+
     public int hashCod() {
-        int res = firstValue != null ? firstValue.hashCode() : 0;
-        res = 31 * res + (secondValue != null ? secondValue.hashCode() : 0);
-        return res;
-
-
+        return Objects.hash(firstValue, secondValue);
     }
 
 //    public void ifPresent() {
