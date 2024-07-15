@@ -1,18 +1,40 @@
-package task15;
+import java.util.Objects;
 
+public class Main {
+    public static void main(String[] args) {
+
+    }
+}
 
 class Pair <X, Y> {
 
+    private X firstValue;
+    private Y secondValue;
 
-    public X getFirst() {
-        return ;
+    private Pair(X x, Y y) {
+        firstValue = x;
+        secondValue = y;
     }
 
-    public Y getSecond() {
-        return ;
+    public static <X, Y> Pair <X, Y> of (X x, Y y) {
+        return new Pair<>(x, y);
     }
 
-    public boolean equals(){
+
+    public X getFirst(X x) {
+        return firstValue;
+    }
+
+    public Y getSecond(Y y) {
+        return secondValue;
+    }
+
+
+    public void equals() {
+
+    }
+
+    public int hashCod() {
         return ;
 
 
