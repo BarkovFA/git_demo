@@ -56,6 +56,7 @@ class Pair <X, Y> {
        ifPresent(null);
     }
 
+
     public void ifPresent(Consumer<? super X, ? super Y> consumer) {
     }
 }
