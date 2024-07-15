@@ -1,6 +1,7 @@
 package task15;
 
 import java.util.Objects;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 
@@ -31,11 +32,11 @@ class Pair <X, Y> {
     }
 
 
-    public X getFirst(X x) {
+    public X getFirst() {
         return firstValue;
     }
 
-    public Y getSecond(Y y) {
+    public Y getSecond() {
         return secondValue;
     }
 
@@ -44,20 +45,17 @@ class Pair <X, Y> {
         if (this == o) return true;
         if (!(o instanceof Pair)) return false;
         Pair<?, ?> pair = (Pair<?, ?>) o;
-        return Objects.equals(secondValue, pair.secondValue);
+        return Objects.equals(secondValue, pair.secondValue) && Objects.equals(firstValue, pair.firstValue);
     }
-
+    @Override
     public int hashCod() {
         return Objects.hash(firstValue, secondValue);
     }
+
+
+    public void ifPresent(BiConsumer <X, Y> biConsumer) {
+        if (firstValue != null && secondValue != null) {
+            biConsumer.accept(firstValue, secondValue);
+        }
+    }
 }
-
-
-//    public void ifPresent() {
-//       ifPresent(null);
-//    }
-//
-//
-//    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
-//    }
-//}
