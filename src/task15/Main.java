@@ -50,11 +50,11 @@ class Pair <X, Y> {
         return Objects.hash(firstValue, secondValue);
     }
 
+
 //    public void ifPresent() {
 //        ifPresent(null);
 //    }
 //
 //    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
-//
 //    }
 }
