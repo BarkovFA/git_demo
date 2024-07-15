@@ -56,11 +56,11 @@ class Pair <X, Y> {
 
     }
 
-    public void ifPresent() {
-        ifPresent(null);
-    }
-
-    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
-
-    }
+//    public void ifPresent() {
+//        ifPresent(null);
+//    }
+//
+//    public void ifPresent(Consumer<? super X, ? super Y> consumer) {
+//
+//    }
 }
