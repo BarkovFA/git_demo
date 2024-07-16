@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Date;
 import java.util.Objects;
 
-public class SampleData {
+public class SampleData implements Serializable {
     static final long serialVersionUID = 132706691457162967L;
 
     String name;
@@ -41,8 +41,8 @@ public class SampleData {
                 '}';
     }
 
-    public static SampleData deserialize (String filePath) {
-        try (ObjectInputStream os = new ObjectInputStream(new FileInputStream(filePath))){
+    public static SampleData deserialize(String filePath) {
+        try (ObjectInputStream os = new ObjectInputStream(new FileInputStream(filePath))) {
             return (SampleData) os.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -50,26 +50,26 @@ public class SampleData {
         }
     }
 
-    public static void serialize (SampleData data, String filePath) {
+    public static void serialize(SampleData data, String filePath) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
             oos.writeObject(data);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    static class Main {
+        public static void main(String[] args) {
+            SampleData sampleData = new SampleData("Test", 1408, new Date());
+            String filePath = "sampledata.ser";
+            serialize(sampleData, filePath);
+            SampleData data = deserialize(filePath);
+            System.out.println(sampleData);
+            System.out.println(data);
+            System.out.println(sampleData.equals(data));
+
+        }
     }
 }
-
-static class Main {
-    public static void main(String[] args) {
-        SampleData sampleData = new SampleData("Test", 1408, new Date());
-        String filePath = "sampledata.ser";
-        serialize(sampleData, filePath);
-        SampleData data = deserialize(filePath);
-        System.out.println(sampleData);
-        System.out.println(data);
-        System.out.println(sampleData.equals(data));
-
-    }}
-}
-
 
 
