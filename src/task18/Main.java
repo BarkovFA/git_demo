@@ -2,13 +2,31 @@ package task18;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<Integer, String> list = new HashMap<>();
+
+        Charset charset = Charset.forName("UTF-8");
+        Reader reader = new InputStreamReader(System.in, charset);
+        BufferedReader bufferedReader = new BufferedReader(reader);
+
+        Stream <String> stream = bufferedReader.lines();
+
+        Map <String, Integer> collectMap =
+                stream.map()
+                        .flatMap()
+                        .map()
+                        .collect()
+
+
+        List<> lst =
         (new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8)))
                 .lines()
                 .flatMap(l -> Stream.of(l.split("[\\p{Punct}\\s]+")))
