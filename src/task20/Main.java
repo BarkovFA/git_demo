@@ -17,13 +17,22 @@ public class Main {
 
         int num = 1 << n;
 
-        int [] lstGray = new int[num];
-        for (int i = 0; i < num; i++) {
-            lstGray[i] = i ^ (i >> 1);
-        }
-
-        return  IntStream.iterate(0, i -> (i+1) % num)
-                .mapToObj(i -> lstGray[i]);
+        return IntStream.iterate(0, i -> (i + 1) % num)
+                .map(i -> i ^ (i >> 1))
+                .boxed();
     }
-
 }
+
+
+
+
+//        int [] lstGray = new int[num];
+//        for (int i = 0; i < num; i++) {
+//            lstGray[i] = i ^ (i >> 1);
+//        }
+//
+//        return  IntStream.iterate(0, i -> (i+1) % num)
+//                .mapToObj(i -> lstGray[i]);
+//    }
+//
+//}
