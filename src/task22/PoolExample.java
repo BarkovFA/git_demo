@@ -22,10 +22,10 @@ public class PoolExample {
         AtomicInteger inProgress = new AtomicInteger(0);
 
         // отправляем задачи на выполнение
-        int i = 0;
-        while (i < 30) {
+
+        while (count.get() < 30) {
             if (inProgress.get() < 3) {
-                final int number = i;
+                final int number = count.incrementAndGet();
                 System.out.println("creating #" + number);
                 executor.submit(() -> {
                     int working = inProgress.incrementAndGet();
@@ -39,7 +39,7 @@ public class PoolExample {
                     working = inProgress.decrementAndGet();
                     System.out.println("end #" + number + ", in progress: " + working + ", done tasks: " + count.incrementAndGet());
                 });
-                i++;
+                count.incrementAndGet();
             } else {
                 Thread.sleep(10);
             }
