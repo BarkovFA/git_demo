@@ -3,17 +3,17 @@ package task21;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Lucky {
-    static int x = 0;
+    static AtomicInteger x = new AtomicInteger(0);
     static AtomicInteger count = new AtomicInteger(0);
 
 
     static class LuckyThread extends Thread {
         @Override
         public void run() {
-            while (x < 999999) {
-                x++;
-                if ((x % 10) + (x / 10) % 10 + (x / 100) % 10 == (x / 1000)
-                        % 10 + (x / 10000) % 10 + (x / 100000) % 10) {
+            while (x.get() < 999999) {
+                int xValue = x.incrementAndGet();
+                if ((xValue % 10) + (xValue / 10) % 10 + (xValue / 100) % 10 == (xValue / 1000)
+                        % 10 + (xValue / 10000) % 10 + (xValue / 100000) % 10) {
                     System.out.println(x);
                     count.incrementAndGet();
                 }
